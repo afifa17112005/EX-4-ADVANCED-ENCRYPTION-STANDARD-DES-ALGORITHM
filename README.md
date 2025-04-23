@@ -10,5 +10,40 @@
   4. AES operates on a 4 × 4 column-major order array of bytes, termed the state
 
 ## PROGRAM: 
+```
+void printASCII(char *ciphertext) 
+{
+    printf("Encrypted Message (ASCII values): ");
+    for (int i = 0; i < strlen(ciphertext); i++) 
+    {
+        printf("%d ", (unsigned char)ciphertext[i]); 
+    }
+    printf("\n");
+}
+
+int main() 
+{
+    char plaintext[100], key[100], ciphertext[100], decryptedText[100];
+
+    printf("Enter the plaintext: ");
+    scanf("%s", plaintext);
+
+    printf("Enter the key: ");
+    scanf("%s", key);
+
+    simpleAESEncrypt(plaintext, key, ciphertext);
+    printASCII(ciphertext);  
+
+    simpleAESDecrypt(ciphertext, key, decryptedText);
+    printf("Decrypted Message: %s\n", decryptedText);
+
+    return 0;
+}
+```
+
 ## OUTPUT:
+
+![Screenshot 2025-04-23 132604](https://github.com/user-attachments/assets/20f19d42-a349-44da-a8b2-94d43b8d0795)
+
 ## RESULT: 
+The program is executed successfully
